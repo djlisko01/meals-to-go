@@ -2,8 +2,23 @@ import { React } from "react";
 import { Text, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 import { spacing } from "../../../utils/spacing";
+import styled from "styled-components/native";
 
-export const RestaurantInfo = ({ resturant = {} }) => {
+const Title = styled.Text`
+  padding: 5px;
+  color: red;
+`;
+
+const RestaurantCard = styled(Card)`
+  background-color: white;
+`;
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px;
+  background-color: white;
+`;
+
+export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Name",
     photos = [
@@ -13,19 +28,13 @@ export const RestaurantInfo = ({ resturant = {} }) => {
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = false,
-  } = resturant;
+  } = restaurant;
   return (
-    <Card>
-      <Card.Cover source={{ uri: photos[0] }} style={styles.card} />
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover source={{ uri: photos[0] }} />
       <Card.Content>
-        <Text>{name}</Text>
+        <Title>{name}</Title>
       </Card.Content>
-    </Card>
+    </RestaurantCard>
   );
 };
-
-styles = StyleSheet.create({
-  card: {
-    margin: spacing.md,
-  },
-});
