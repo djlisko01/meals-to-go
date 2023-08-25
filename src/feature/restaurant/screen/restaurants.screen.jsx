@@ -1,18 +1,17 @@
 import React, { Fragment } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Searchbar } from "react-native-paper";
-import { spacing } from "../../../utils/spacing";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components/native";
 
 const SearchBarView = styled.View`
-  padding: 10px;
+  padding: ${(props) => props.theme.space[2]};
 `;
 
 const ListView = styled.View`
-  padding: 10px;
+  padding: ${(props) => props.theme.space[2]};
   flex: 1;
-  background-color: blue;
+  background-color: ${(props) => props.theme.colors.ui.primary};
 `;
 
 export const RestaurantScreen = () => {
