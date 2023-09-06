@@ -11,7 +11,7 @@ const SearchBarView = styled.View`
 const ListView = styled.View`
   padding: ${(props) => props.theme.space[2]};
   flex: 1;
-  background-color: ${(props) => props.theme.colors.ui.primary};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 export const RestaurantScreen = () => {
